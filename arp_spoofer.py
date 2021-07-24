@@ -24,7 +24,7 @@ try:
         time.sleep(2)
 
 except KeyboardInterrupt:
-        print("[+] Cerrando ARP SPOOF")
+        print("[+] Closing ARP SPOOF")
         
        
     
