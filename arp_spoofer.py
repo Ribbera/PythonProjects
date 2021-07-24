@@ -1,3 +1,6 @@
+# To run this correctly you need Ubuntu or other similar distro 
+# Remember before run the spoofer run this command in root:  echo 1 > /proc/sys/net/ipv4/ip_forward
+
 import scapy.all as scapy 
 import time
 import sys
@@ -22,3 +25,8 @@ try:
 
 except KeyboardInterrupt:
         print("[+] Cerrando ARP SPOOF")
+        
+       
+    
+    
+  
