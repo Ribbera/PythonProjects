@@ -11,6 +11,14 @@ def get_arguments():
     parser.add_option("--gateway", dest = "gateway_ip", help="La ip del router")
     parser.add_option("--gatewaymac", dest = "gateway_mac", help="La MAC del router")
     (options, arguments) = parser.parse_args()
+    if not options.target_ip:
+        parser.error("[-] Porfavor indica un --target, usa --help para mas informacion")
+    if not options.target_mac:
+        parser.error("[-] Porfavor indica un --targetmac, usa --help para mas informacion")
+    if not options.gateway_ip:
+        parser.error("[-] Porfavor indica un --gateway, usa --help para mas informacion")
+    if not options.gateway_mac:
+        parser.error("[-] Porfavor indica un --gatewaymac, usa --help para mas informacion")
     return options
 
 def spoof(target_ip, spoof_ip, target_mac):
